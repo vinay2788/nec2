@@ -1,4 +1,3 @@
-ubuntu@ip-10-0-1-107:~/nectar-vinay-green-v2-main$ sudo cat Jenkinsfile 
 pipeline {
     agent any
 
