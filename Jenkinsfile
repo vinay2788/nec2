@@ -31,10 +31,22 @@ pipeline {
                 }
             }
         }
-       stage('build WAR'){
-          steps{
-                 sh "./mvnw clean install -Dmaven.test.skip=true  -P docker"
-	}	}
+      // stage('build WAR'){
+        //  steps{
+          //       sh "./mvnw clean install -Dmaven.test.skip=true  -P docker"
+//	}	}
+       stage('Build WAR') {
+   	 agent {
+         docker {
+            image 'maven:3.9.6-eclipse-temurin-11'   // Java 11 + Maven 3.9
+            args  '-v $HOME/.m2:/root/.m2'           // cache Maven repo
+            reuseNode true                           // runs on same worker node
+        }
+    }
+    steps {
+        sh './mvnw clean install -Dmaven.test.skip=true -P docker'
+   	 }
+	}
 
         stage('Build Docker Image') {
             steps {
