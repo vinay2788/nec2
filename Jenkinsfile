@@ -39,7 +39,7 @@ pipeline {
    	 agent {
          docker {
             image 'maven:3.9.6-eclipse-temurin-11'   // Java 11 + Maven 3.9
-            //args  '-u 111:113 -v /tmp/.m2:/root/.m2 -e HOME=/root'           // cache Maven repo
+            args  '-u root'           // cache Maven repo
             reuseNode true                           // runs on same worker node
         }
     }
