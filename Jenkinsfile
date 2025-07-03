@@ -31,6 +31,10 @@ pipeline {
                 }
             }
         }
+       stage('build WAR'){
+          steps{
+                 sh "./mvn clean install -Dmaven.test.skip=true  -P docker"
+	}	}
 
         stage('Build Docker Image') {
             steps {
