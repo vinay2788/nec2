@@ -4,7 +4,7 @@ pipeline {
     environment {
         AWS_REGION     = 'me-central-1'
         AWS_ACCOUNT_ID = '017691937205'
-        ECR_REPO       = 'api'
+        ECR_REPO       = 'frontend'
         IMAGE_TAG      = "${env.BUILD_NUMBER}"
         // Jenkins credentials ID for AWS (IAM user with permissions to ECR & ECS)
         AWS_CREDENTIALS_ID = 'c1b403c0-d505-448f-abd8-88d650c97b36'
