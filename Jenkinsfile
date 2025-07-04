@@ -59,7 +59,7 @@ pipeline {
                     credentialsId: env.AWS_CREDENTIALS_ID
                 ]]) {
                     // Force new deployment in ECS service to pick up new image
-                    sh "aws ecs update-service --cluster nectar-cluster --service api --force-new-deployment --region ${AWS_REGION}"
+                    sh "aws ecs update-service --cluster nectar-cluster --service nectar-frontend --force-new-deployment --region ${AWS_REGION}"
                 }
             }
         }
