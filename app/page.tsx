@@ -65,7 +65,7 @@ const Login = () => {
     <div
       className={`min-h-screen ${getBg()} bg-cover bg-gray-200 bg-blend-multiply flex justify-center items-center`}
     >
-      <div className="py-12 px-12 bg-gray-400 rounded-2xl shadow-xl">
+      <div className="py-12 px-12 bg-blue-500 rounded-2xl shadow-xl">
         <div>
           <div className="text-center text-sm mb-8 mx-auto font-semibold text-secondary tracking-wide cursor-pointer">
             <span>{"Extracting Sweetness of Things"}</span>
